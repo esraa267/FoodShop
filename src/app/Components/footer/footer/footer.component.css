@@ -1,0 +1,40 @@
+.footer-style-1 {
+    padding: 5rem 0;
+}
+
+.align-items-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+.footer-social ul {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.footer-social li {
+    display: inline-block;
+}
+
+.footer-social a {
+    display: block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50px;
+    font-size: 24px;
+    margin: 0 10px 0 0;
+    color: #2d2d2d;
+    border: 1px solid transparent;
+    -webkit-transition: background-color .2s ease-in-out;
+    -o-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+}
+
+.company-about a {
+    color: #2d2d2d;
+    text-decoration: none;
+    font-weight: 600;
+}

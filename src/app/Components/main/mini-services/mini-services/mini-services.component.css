@@ -1,0 +1,30 @@
+.mini-services {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 50px;
+}
+
+.mini-services .mini-s {
+    border-right: solid 1px rgba(88, 180, 51, 0.49);
+    cursor: pointer;
+}
+
+.mini-services .mini-service-card .service-icon {
+    display: inline-block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.mini-services .mini-service-card .service-icon i {
+    font-size: 40px;
+    color: #79a207;
+    transition: .5s ease;
+}
+
+.mini-services .mini-service-card .mini-service-heading {
+    font-size: 16px;
+    font-weight: 500;
+    color: #79a207;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    transition: .5s ease;
+}

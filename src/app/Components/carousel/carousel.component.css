@@ -1,0 +1,42 @@
+.slider {
+    position: relative;
+}
+
+.carousel-item {
+    height: 78vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.txt {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+
+.web-btn {
+    background-color: #79a207;
+    color: #FFFFFF;
+    border-radius: 0;
+    padding: 8px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    transition: .8s ease !important;
+}
+
+.web-btn:hover {
+    background-color: #2d2d2d;
+    border: solid 1px #2d2d2d;
+    color: #FFFFFF;
+}
+
+.txt h1 {
+    color: #79a207;
+}

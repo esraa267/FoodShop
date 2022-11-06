@@ -10,9 +10,9 @@ import { ScrollDirective } from './Directives/scroll.directive';
 
 @NgModule({
   declarations: [
-    AppComponent,HeaderComponent,FooterComponent,ScrollDirective
+    AppComponent,HeaderComponent,FooterComponent,ScrollDirective],
 
-  ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

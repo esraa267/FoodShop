@@ -1,25 +1,3 @@
-.slider {
-    position: relative;
-}
-
-.carousel-item {
-    height: 78vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.carousel {
-    display: flex;
-    justify-content: center;
-}
-
-.txt {
-    position: absolute;
-    top: 20%;
-    text-align: center;
-}
-
 .web-btn {
     background-color: #79a207;
     color: #FFFFFF;
@@ -37,6 +15,3 @@
     color: #FFFFFF;
 }
 
-.txt h1 {
-    color: #79a207;
-}

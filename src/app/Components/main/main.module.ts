@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
 import { AboutUsComponent } from './aboutus/about-us/about-us.component';
 import { MiniServicesComponent } from './mini-services/mini-services/mini-services.component';
-import { CarouselComponent } from '../carousel/carousel.component';
 import { RouterModule } from '@angular/router';
-import { ScrollDirective } from 'src/app/Directives/scroll.directive';
+import { commonModule } from '../commons/common.module';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 
@@ -14,14 +14,14 @@ import { ScrollDirective } from 'src/app/Directives/scroll.directive';
   declarations: [
     MainComponent,
     AboutUsComponent,
-    MiniServicesComponent,
-    CarouselComponent
-    
+    MiniServicesComponent, CarouselComponent
+    ,
+
 
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule, commonModule
 
 
 

@@ -1,5 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
-import clients from 'src/app/Models/clients';
+import { Component, OnInit } from '@angular/core';
 import { APIService } from 'src/app/Services/api.service';
 import Swal from 'sweetalert2';
 

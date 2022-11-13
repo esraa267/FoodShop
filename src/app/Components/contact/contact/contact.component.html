@@ -1,0 +1,31 @@
+<section class="mt-5">
+
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+          
+          <th class="text-center"><app-modal (onSave)="onSave($event)" type="add" ></app-modal></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.place}}</td>
+          <td class="text-center">
+            
+            <app-modal (onSave)="onSave($event)" [client]="item" type="update"></app-modal>
+            <button class="btn btn-danger ms-2" (click)="DeleteClient(item.id)">delete</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>

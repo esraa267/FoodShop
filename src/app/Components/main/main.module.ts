@@ -6,6 +6,7 @@ import { MiniServicesComponent } from './mini-services/mini-services/mini-servic
 import { RouterModule } from '@angular/router';
 import { commonModule } from '../commons/common.module';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ScrollDirective } from 'src/app/Directives/scroll.directive';
 
 
 
@@ -14,14 +15,15 @@ import { CarouselComponent } from './carousel/carousel.component';
   declarations: [
     MainComponent,
     AboutUsComponent,
-    MiniServicesComponent, CarouselComponent
-    ,
+    MiniServicesComponent,
+    CarouselComponent
 
 
   ],
   imports: [
     CommonModule,
-    RouterModule, commonModule
+    RouterModule,
+     commonModule
 
 
 

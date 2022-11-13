@@ -6,7 +6,7 @@ import { FooterComponent } from './Components/footer/footer/footer.component';
 import { HeaderComponent } from './Components/header/header/header.component';
 import { MainModule } from './Components/main/main.module';
 import { ScrollDirective } from './Directives/scroll.directive';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { ScrollDirective } from './Directives/scroll.directive';
     BrowserModule,
     AppRoutingModule,
    MainModule,
-    
+   HttpClientModule
     
   ],
   providers: [],

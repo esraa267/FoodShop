@@ -1,0 +1,26 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title"> {{type}} client</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form #formdata="ngForm" (submit)="Save(formdata)">
+
+			<label for="dateOfBirth">Client Name</label>
+			<input class="form-control form-control-sm mb-2" type="text" name="name" [(ngModel)]="client.name" required>
+			<label for="dateOfBirth">Client Place</label>
+			<input class="form-control form-control-sm" type="text" placeholder="Place" name="place"
+				[(ngModel)]="client.place" required>
+
+		</form>
+
+	</div>
+
+	<div class="modal-footer">
+		<button [disabled]="formdata.invalid" type="submit" class="btn btn-outline-dark"
+			(click)="Save(formdata)">Save</button>
+	</div>
+</ng-template>
+
+<button class="btn" [ngClass]="{'btn-primary':type=='add','btn-warning':type=='update'}"
+	(click)="open(content)">{{type}}</button>

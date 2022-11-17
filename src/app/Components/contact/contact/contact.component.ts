@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { cart } from 'src/app/Models/cart';
 import product from 'src/app/Models/product';
 import { APIService } from 'src/app/Services/api.service';
@@ -12,7 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class ContactComponent implements OnInit {
   data: any = [];
-  constructor(private api: APIService,private cartService:CartService) { }
+  data$: Observable<any> = new Observable<any>;
+  constructor(private api: APIService, private cartService: CartService) { }
 
   ngOnInit(): void {
 
@@ -25,7 +27,7 @@ export class ContactComponent implements OnInit {
   }
   DeleteProduct(id: number) {
     console.log(id);
-    
+
     Swal.fire({
       title: 'Are you sure?',
       icon: 'warning',
@@ -36,23 +38,19 @@ export class ContactComponent implements OnInit {
       if (result.value) {
         Swal.fire('Removed!', 'Client removed successfully.', 'success');
         this.api.deleteProduct(id).subscribe(_ => this.GetAll());
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire('Cancelled', 'Client still in our database.)', 'error');
       }
+      // else if (result.dismiss === Swal.DismissReason.cancel) {
+      //   Swal.fire('Cancelled', 'Client still in our database.)', 'error');
+      // }
     });
   }
   GetAll() {
-    this.api.getAll().subscribe((res) =>
-  
-    
-     this.data=res
-    )
+    this.data$ = this.api.getAll();
   }
 
-  AddToCart(item:cart){
+  AddToCart(item: cart) {
     console.log(item);
-    
-   this.cartService.Addtocart(item);
-    }
+    this.cartService.Addtocart(item);
+  }
 
 }

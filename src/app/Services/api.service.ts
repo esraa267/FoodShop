@@ -4,7 +4,7 @@ import product from '../Models/product';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn:'root'
 })
 export class APIService {
 

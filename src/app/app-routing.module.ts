@@ -9,7 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    loadChildren: () => import('./Components/cards/cards.module').then(m => m.CardsModule)
+    loadChildren: () => import('./Components/cards/cards.module').
+    then(m => m.CardsModule)
   },
   {
     path: 'contact',

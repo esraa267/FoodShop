@@ -14,14 +14,10 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.GetAllFromCart()
   }
+
   GetAllFromCart() {
-
-  
-    
     this.CartList = this.cartService.GetAll();
-
-console.log(this.CartList);
-
+    console.log(this.CartList);
   }
 
 }

@@ -13,6 +13,8 @@ import { commonModule } from '../commons/common.module';
   imports: [
     CardsRoutingModule,
     CommonModule,commonModule
+  ],exports:[
+    CardComponent
   ]
  
 })

@@ -5,8 +5,8 @@
                 <div class="col-12 col-lg-6 mt-auto mb-auto">
                     <ul class="d-flex mb-0 top-info">
                         <li class="c-links d-none d-lg-block"><span>
-                            <i class="fa fa-whatsapp"></i>
-                            <i class="fa fa-wrench"></i>
+                                <i class="fa fa-whatsapp"></i>
+                                <i class="fa fa-wrench"></i>
                             </span>
                             <a href="#">+( 34 ) 609 331754</a>
                         </li>
@@ -14,17 +14,21 @@
                 </div>
                 <div class="col-12 col-lg-6 mt-auto mb-auto d-lg-flex justify-content-center justify-content-lg-end">
                     <ul class="shop-details d-flex">
-
                         <li>
-                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                            <button routerLink="cart" type="button" class="btn btn-success position-relative fixed-nav-items">
+                                Cart
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{totalInCart}}
+
+                                </span>
+                            </button>
                         </li>
                     </ul>
                 </div>
                 <div class="col-12 d-flex justify-content-center align-items-center">
-                    <a class="navbar-brand"><img
-                            src="https://megaone.acrothemes.com/food-shop/img/logo.png"></a>
+                    <a class="navbar-brand"><img src="https://megaone.acrothemes.com/food-shop/img/logo.png"></a>
                 </div>
             </div>
         </div>
@@ -60,13 +64,18 @@
                             </li>
                             <li><a class="nav-link">Shop</a></li>
                             <li><a class="nav-link">Blogs</a></li>
-                            <li><a class="nav-link" routerLink="contact">Contact</a></li>
+                            <li><a class="nav-link" routerLink="contact">Products</a></li>
                         </ul>
                     </div>
                 </div>
                 <!--Side Menu Button-->
                 <div class="col-3 d-flex justify-content-end align-items-center">
-
+                    <button routerLink="cart" type="button" class="btn btn-success position-relative fixed-nav-items">
+                        Cart
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{totalInCart}}
+                        </span>
+                    </button>
 
                 </div>
             </div>

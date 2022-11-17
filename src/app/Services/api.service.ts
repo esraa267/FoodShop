@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import clients from '../Models/clients';
+import product from '../Models/product';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,23 +12,23 @@ export class APIService {
 
 
   getAll() {
-    return this.http.get('https://localhost:7013/api/clients')
+    return this.http.get(environment.URL)
   }
   getById(id: number) {
     return this.http.get(`${environment.URL}/${id}`);
   }
-  addClient(data: clients) {
-    return this.http.post(environment.URL, data, {
+  addProduct(data: product) {
+    return this.http.post(environment.URL+'/Add', data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }), withCredentials: true,
     })
   }
-  deleteClient(id: number) {
+  deleteProduct(id: number) {
     return this.http.delete(`${environment.URL}/${id}`)
   }
-  updateClient(data: clients) {
-    return this.http.put(environment.URL, data, {
+  updateProduct(data: product) {
+    return this.http.put(`${environment.URL}/${data.id}`, data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }), withCredentials: true,

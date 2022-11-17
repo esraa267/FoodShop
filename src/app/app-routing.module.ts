@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'contact',
     loadChildren: () => import('./Components/contact/contact.module').then(m => m.ContactModule)
-  }
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./Components/cart/cart.module').then(m => m.CartModule)
+  },
 ];
 
 @NgModule({

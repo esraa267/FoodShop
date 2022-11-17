@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { commonModule } from '../commons/common.module';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ScrollDirective } from 'src/app/Directives/scroll.directive';
+import { CardsModule } from '../cards/cards.module';
 
 
 
@@ -23,7 +24,7 @@ import { ScrollDirective } from 'src/app/Directives/scroll.directive';
   imports: [
     CommonModule,
     RouterModule,
-     commonModule
+     commonModule,CardsModule
 
 
 

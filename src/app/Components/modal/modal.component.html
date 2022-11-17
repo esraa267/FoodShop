@@ -6,12 +6,15 @@
 	<div class="modal-body">
 		<form #formdata="ngForm" (submit)="Save(formdata)">
 
-			<label for="dateOfBirth">Client Name</label>
-			<input class="form-control form-control-sm mb-2" type="text" name="name" [(ngModel)]="client.name" required>
-			<label for="dateOfBirth">Client Place</label>
-			<input class="form-control form-control-sm" type="text" placeholder="Place" name="place"
-				[(ngModel)]="client.place" required>
-
+			<label for="dateOfBirth">Product Name</label>
+			<input class="form-control form-control-sm mb-2"
+			 type="text" name="name" [(ngModel)]="products.name" required>
+			<label for="dateOfBirth">Product Place</label>
+			<input class="form-control form-control-sm" type="text" placeholder="Place" name="price"
+				[(ngModel)]="products.price" required>
+				<label for="dateOfBirth">Product Description</label>
+				<input class="form-control form-control-sm" type="text" placeholder="Place" name="description"
+					[(ngModel)]="products.description" required>
 		</form>
 
 	</div>

@@ -1,6 +1,6 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { NgbModal, ModalDismissReasons, NgbModalRef, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import clients from 'src/app/Models/clients';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import product from 'src/app/Models/product';
 import { APIService } from 'src/app/Services/api.service';
 
 @Component({
@@ -12,11 +12,12 @@ export class ModalComponent implements OnInit {
 	closeResult = '';
 	@Input() type = '';
 	@Output() onSave = new EventEmitter<any>();
-	@Input() client: clients = { name: '', place: '' }
+	@Input() products: product = { name: '', price: '',description:'' }
 	constructor(private modalService: NgbModal, private api: APIService) { }
 
 	ngOnInit(): void {
-		
+		const clientAsString = JSON.stringify(this.products);
+		this.products = JSON.parse(clientAsString);
 		
 	}
 	open(content: any) {
@@ -40,16 +41,20 @@ export class ModalComponent implements OnInit {
 		}
 	}
 	Save(data: any) {
-		console.log(this.client);
+		
 		if(this.type=='add'){
-			this.api.addClient(data.value).subscribe(_ => {
+			console.log(data.value);
+			
+			this.api.addProduct(data.value).subscribe(_ => {
 				this.api.getAll().subscribe(res =>
-					this.onSave.emit(res)
+				this.onSave.emit(res)
 				)
 			});
 		}
 		else{
-			this.api.updateClient(this.client).subscribe(_ => {
+		
+			
+			this.api.updateProduct(this.products).subscribe(_ => {
 				this.api.getAll().subscribe(res =>
 					this.onSave.emit(res)
 				)

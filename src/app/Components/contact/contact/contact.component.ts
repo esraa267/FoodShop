@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { cart } from 'src/app/Models/cart';
+import product from 'src/app/Models/product';
 import { APIService } from 'src/app/Services/api.service';
+import { CartService } from 'src/app/Services/cart/cart.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,17 +12,20 @@ import Swal from 'sweetalert2';
 })
 export class ContactComponent implements OnInit {
   data: any = [];
-  constructor(private api: APIService) { }
+  constructor(private api: APIService,private cartService:CartService) { }
 
   ngOnInit(): void {
 
-    this.GetAll()
+
+    this.GetAll();
 
   }
   onSave(data: any) {
     this.data = data;
   }
-  DeleteClient(id: number) {
+  DeleteProduct(id: number) {
+    console.log(id);
+    
     Swal.fire({
       title: 'Are you sure?',
       icon: 'warning',
@@ -29,15 +35,24 @@ export class ContactComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         Swal.fire('Removed!', 'Client removed successfully.', 'success');
-        this.api.deleteClient(id).subscribe(_ => this.GetAll());
+        this.api.deleteProduct(id).subscribe(_ => this.GetAll());
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire('Cancelled', 'Client still in our database.)', 'error');
       }
     });
   }
   GetAll() {
-    this.api.getAll().subscribe(res => this.data = res
+    this.api.getAll().subscribe((res) =>
+  
+    
+     this.data=res
     )
   }
+
+  AddToCart(item:cart){
+    console.log(item);
+    
+   this.cartService.Addtocart(item);
+    }
 
 }

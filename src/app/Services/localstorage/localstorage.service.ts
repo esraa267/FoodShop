@@ -12,7 +12,6 @@ export class LocalstorageService {
   private encrypt(txt: string): string {
     return CryptoJS.AES.encrypt(txt, keys.Cart).toString();
   }
-
   private decrypt(txtToDecrypt: string) {
     return CryptoJS.AES.decrypt(txtToDecrypt,keys.Cart).toString(CryptoJS.enc.Utf8);
   }
@@ -25,8 +24,8 @@ export class LocalstorageService {
 
     return this.decrypt(localStorage.getItem(key)||'');
   }
-  AddToCart(item: cart) {
-    let result = this.GetLocalStorage(keys.Cart);
+  Add(item: cart, key:keys) {
+    let result = this.GetLocalStorage(key);
     if (result) {
       let res_Array = JSON.parse(result) as Array<any>;
       let index = res_Array.findIndex((e: cart) => e.id == item.id);
@@ -46,9 +45,8 @@ export class LocalstorageService {
       this.SetLocalStorage(keys.Cart, arr)
     }
   }
-
-  GetnumOfCartItems(): number {
-    const res = this.GetLocalStorage(keys.Cart)
+  GetnumOfItems(key:keys): number {
+    const res = this.GetLocalStorage(key)
     if (res) {
       const res_Arr = JSON.parse(res) as Array<cart>;
       console.log(res_Arr);
@@ -57,8 +55,8 @@ export class LocalstorageService {
     }
     return 0;
   }
-  GetCartItems(){
-    let result =this.GetLocalStorage(keys.Cart)
+  GetItems(key:keys){
+    let result =this.GetLocalStorage(key)
     if (result) {
     
 

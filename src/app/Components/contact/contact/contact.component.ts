@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { cart } from 'src/app/Models/cart';
 import product from 'src/app/Models/product';
-import { APIService } from 'src/app/Services/api.service';
+import { APIService } from 'src/app/Services/api/api.service';
 import { CartService } from 'src/app/Services/cart/cart.service';
 import Swal from 'sweetalert2';
 

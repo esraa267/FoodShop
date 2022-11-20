@@ -58,8 +58,6 @@ export class LocalstorageService {
   GetItems(key:keys){
     let result =this.GetLocalStorage(key)
     if (result) {
-    
-
       return JSON.parse(result) as Array<cart>
     }
 

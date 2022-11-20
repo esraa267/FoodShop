@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import product from 'src/app/Models/product';
-import { APIService } from 'src/app/Services/api.service';
+import { APIService } from 'src/app/Services/api/api.service';
 
 @Component({
 	selector: 'app-modal',

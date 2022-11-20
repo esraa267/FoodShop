@@ -23,4 +23,10 @@ export class CartService {
   GetAll(): cart[] {
   return this.locaclstorage.GetItems(keys.Cart);
   }
+  GetLength(){
+    return this.locaclstorage.GetnumOfItems(keys.Cart);
+  }
+  RemoveCart(){
+    this.locaclstorage.Remove(keys.Cart)
+  }
 }

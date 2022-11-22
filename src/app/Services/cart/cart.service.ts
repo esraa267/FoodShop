@@ -29,4 +29,9 @@ export class CartService {
   RemoveCart(){
     this.locaclstorage.Remove(keys.Cart)
   }
+  DeleteItemFromCart(item:any){
+ return  this.locaclstorage.DeletItem(keys.Cart,item);
+
+
+  }
 }

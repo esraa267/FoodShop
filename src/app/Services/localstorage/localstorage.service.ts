@@ -56,13 +56,31 @@ export class LocalstorageService {
     if (result) {
       return JSON.parse(result) as Array<cart>;
     }
-
     return [];
   }
   Remove(key: keys) {
     if (this.GetLocalStorage(key)) {
       localStorage.removeItem(key);
-      
+
     }
+  }
+  DeletItem(key: keys,item:any):boolean{
+          const result= this.GetItems(key);
+          const index=this.FindItem(result,item)
+        if ( index >=0){
+          result.splice(index,1)
+          this.SetLocalStorage(key,result)
+          return true;
+        }
+        return false;
+
+          
+        
+  }
+  FindItem(list:any[],item:any):number{
+  
+   return  list.findIndex(ele=> JSON.stringify(ele)===JSON.stringify( item))
+   
+   
   }
 }

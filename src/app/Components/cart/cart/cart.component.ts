@@ -15,11 +15,14 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetAllFromCart();
+    console.log( this.CartList.length<=0);
+    
+   
   }
 
   GetAllFromCart() {
     this.CartList = this.cartService.GetAll();
-   
+   this.cartService.cartItems.next(this.cartService.GetLength())
   }
   CheckOut() {
 
@@ -40,5 +43,11 @@ export class CartComponent implements OnInit {
      
       
       );
+  }
+
+  Delete(item:any){
+    this.cartService.DeleteItemFromCart(item);
+    this.GetAllFromCart();
+    
   }
 }

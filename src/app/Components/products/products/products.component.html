@@ -20,7 +20,6 @@
           <td>{{item.description}}</td>
 
           <td class="text-center">
-            <button (click)="AddToCart(item)" class="btn btn-primary">Add to Cart</button>
             <app-modal (onSave)="onSave($event)" [products]="item" type="update"></app-modal>
             <button class="btn btn-danger ms-2" (click)="DeleteProduct(item.id!)">delete</button>
           </td>

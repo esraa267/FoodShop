@@ -7,14 +7,10 @@ const routes: Routes = [
     path: '',
     component: MainComponent
   },
+ 
   {
     path: 'products',
-    loadChildren: () => import('./Components/cards/cards.module').
-    then(m => m.CardsModule)
-  },
-  {
-    path: 'contact',
-    loadChildren: () => import('./Components/contact/contact.module').then(m => m.ContactModule)
+    loadChildren: () => import('./Components/products/products.module').then(m => m.ProductsModule)
   },
   {
     path: 'cart',

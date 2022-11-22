@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import product from '../../Models/product';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { cart } from 'src/app/Models/cart';
 
 @Injectable({
   providedIn:'root'
@@ -11,7 +13,7 @@ export class APIService {
   constructor(private http: HttpClient) { }
 
 
-  getAll() {
+  getAll  () {
     return this.http.get(environment.URL)
   }
   getById(id: number) {

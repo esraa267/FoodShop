@@ -1,3 +1,22 @@
-.checkoutBtn{
-    display: none;
+h1{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.items{
+    position: relative;
+    margin: 10px 0px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 150px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }

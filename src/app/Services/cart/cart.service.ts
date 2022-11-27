@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { cart } from 'src/app/Models/cart';
+import { orderProduct } from 'src/app/Models/orderProduct';
 import { BehaviorSubject } from 'rxjs';
 import { LocalstorageService } from '../localstorage/localstorage.service';
 import keys from 'src/app/Models/keys';
@@ -13,14 +13,14 @@ export class CartService {
     this.cartItems.next(this.locaclstorage.GetnumOfItems(keys.Cart))
   }
 
-  Addtocart(item: cart) {
+  Addtocart(item: orderProduct) {
     this.locaclstorage.Add(item,keys.Cart)
    
     this.cartItems.next(this.locaclstorage.GetnumOfItems(keys.Cart))
 
   }
  
-  GetAll(): cart[] {
+  GetAll(): orderProduct[] {
   return this.locaclstorage.GetItems(keys.Cart);
   }
   GetLength(){

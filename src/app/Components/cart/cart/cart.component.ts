@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { cart } from 'src/app/Models/cart';
+import { orderProduct } from 'src/app/Models/orderProduct';
 import Order from 'src/app/Models/order';
 import { CartService } from 'src/app/Services/cart/cart.service';
 import { OrderService } from 'src/app/Services/order/order.service';
@@ -10,7 +10,7 @@ import { OrderService } from 'src/app/Services/order/order.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  CartList: cart[] = [];
+  CartList: orderProduct[] = [];
   constructor(private cartService: CartService, private http: OrderService) {}
 
   ngOnInit(): void {
@@ -22,16 +22,19 @@ export class CartComponent implements OnInit {
 
   GetAllFromCart() {
     this.CartList = this.cartService.GetAll();
+    
+    
    this.cartService.cartItems.next(this.cartService.GetLength())
   }
   CheckOut() {
 
     const result:Order = {
       order:  {
-        quantity: this.cartService.GetLength(),
+        userId: 1,
       },
       orderProduct: this.cartService.GetAll(),
     };
+console.log(result);
 
     this.http.addOrder(result).subscribe(_=>
       

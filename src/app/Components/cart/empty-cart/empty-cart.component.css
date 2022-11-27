@@ -1,0 +1,31 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+.content .title{
+    margin-bottom: 4px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 24px;
+
+}
+.btn-primary{
+    margin-top: 20px;
+    width: 250px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(56, 102, 223);
+    border: 1px solid rgb(56, 102, 223);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import product from '../../Models/product';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-import { cart } from 'src/app/Models/cart';
 
 @Injectable({
   providedIn:'root'
@@ -14,23 +12,23 @@ export class APIService {
 
 
   getAll  () {
-    return this.http.get(environment.URL)
+    return this.http.get(environment.ProductURL)
   }
   getById(id: number) {
-    return this.http.get(`${environment.URL}/${id}`);
+    return this.http.get(`${environment.ProductURL}/${id}`);
   }
   addProduct(data: product) {
-    return this.http.post(environment.URL+'/Add', data, {
+    return this.http.post(environment.ProductURL+'/Add', data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }), withCredentials: true,
     })
   }
   deleteProduct(id: number) {
-    return this.http.delete(`${environment.URL}/${id}`)
+    return this.http.delete(`${environment.ProductURL}/${id}`)
   }
   updateProduct(data: product) {
-    return this.http.put(`${environment.URL}/${data.id}`, data, {
+    return this.http.put(`${environment.ProductURL}/${data.id}`, data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }), withCredentials: true,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { cart } from 'src/app/Models/cart';
+import { orderProduct } from 'src/app/Models/orderProduct';
 import keys from 'src/app/Models/keys';
 import * as CryptoJS from 'crypto-js';
 
@@ -22,11 +22,11 @@ export class LocalstorageService {
   private GetLocalStorage(key: string) {
     return this.decrypt(localStorage.getItem(key) || '');
   }
-  Add(item: cart, key: keys) {
+  Add(item: orderProduct, key: keys) {
     let result = this.GetLocalStorage(key);
     if (result) {
       let res_Array = JSON.parse(result) as Array<any>;
-      let index = res_Array.findIndex((e: cart) => e.id == item.id);
+      let index = res_Array.findIndex((e: orderProduct) => e.id == item.id);
       if (index >= 0) {
         ++res_Array[index].Quantity;
         this.SetLocalStorage(keys.Cart, res_Array);
@@ -44,7 +44,7 @@ export class LocalstorageService {
   GetnumOfItems(key: keys): number {
     const res = this.GetLocalStorage(key);
     if (res) {
-      const res_Arr = JSON.parse(res) as Array<cart>;
+      const res_Arr = JSON.parse(res) as Array<orderProduct>;
       console.log(res_Arr);
 
       return res_Arr.length;
@@ -54,7 +54,7 @@ export class LocalstorageService {
   GetItems(key: keys) {
     let result = this.GetLocalStorage(key);
     if (result) {
-      return JSON.parse(result) as Array<cart>;
+      return JSON.parse(result) as Array<orderProduct>;
     }
     return [];
   }

@@ -1,7 +1,8 @@
-import { cart } from "./cart";
+import { orderProduct } from "./orderProduct";
 
 interface Order{
-    order:{quantity:number},
-    orderProduct:cart[] ,
+    order:{userId:number},
+    orderProduct:orderProduct[] ,
+   
 }
 export default Order

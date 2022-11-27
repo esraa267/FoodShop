@@ -1,32 +1,39 @@
 <section class="mt-5">
   <div class="container">
-    <div [ngClass]="{checkoutBtn:CartList.length<=0}">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of CartList">
-            <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.Quantity }}</td>
-            <td class="text-center">
-              <button (click)="Delete(item)" class="btn btn-danger ms-2">
+    <section *ngIf="CartList.length > 0" class="row">
+      <div class="col-8">
+        <div *ngFor="let item of CartList" class="items">
+          <div class="row">
+            <div class="col-3">
+              <img
+                src="https://megaone.acrothemes.com/food-shop/img/item8.jpg"
+              />
+            </div>
+            <div class="col-9">
+              <span>{{item.name}}</span>
+              <h1>{{item.description}}</h1>
+              <button (click)="Delete(item)" class="btn btn-danger">
                 delete
               </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="float-end">
-        <button (click)="CheckOut()" class="btn btn-success">Check Out</button>
+            </div>
+          </div>
+          <div class="price">
+            <h3>{{item.price|currency}}</h3>
+            <div>
+              <span>+</span><span>{{item.Quantity}}</span><span>-</span>
+            </div>
+          </div>
+        </div>
+        <div class="btn conti"></div>
+      
       </div>
 
-    </div>
-   
+      <div class="col-4">
+        <button (click)="CheckOut()" class="btn btn-success">Check Out</button>
+      </div>
+    </section>
+    <section *ngIf="CartList.length <= 0">
+      <app-empty-cart></app-empty-cart>
+    </section>
   </div>
 </section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { cart } from 'src/app/Models/cart';
+import { orderProduct } from 'src/app/Models/orderProduct';
 import { APIService } from 'src/app/Services/api/api.service';
 import { CartService } from 'src/app/Services/cart/cart.service';
 
@@ -16,7 +16,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.GetAll();
   }
-  AddToCart(item: cart) {
+  AddToCart(item: orderProduct) {
     console.log(item);
     this.cartService.Addtocart(item);
   }

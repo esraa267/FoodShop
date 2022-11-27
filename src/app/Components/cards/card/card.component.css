@@ -5,13 +5,21 @@
 .padding-bottom {
   padding-bottom: 120px;
 }
-
+.item-detail{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
 .featured-items .featured-item-card {
   border: solid 1px #eee;
   padding: 20px;
   margin-top: 30px;
 }
-
+.item-price{
+background-color: rgb(237, 244, 244);
+padding: 5px;
+border-radius: 10%;
+}
 .featured-item-card:hover {
   border: solid 1px #79a207;
 }

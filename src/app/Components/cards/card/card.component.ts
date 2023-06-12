@@ -11,6 +11,7 @@ import { CartService } from 'src/app/Services/cart/cart.service';
 })
 export class CardComponent implements OnInit {
   Products$: Observable<any> = new Observable<any>();
+  Products:Array<string>=[];
   constructor(private cartService: CartService, private api: APIService) {}
 
   ngOnInit(): void {
@@ -22,5 +23,8 @@ export class CardComponent implements OnInit {
   }
   GetAll() {
     this.Products$ = this.api.getAll();
+  }
+  saveProduct(productName:string){
+  this.Products.push(productName)
   }
 }

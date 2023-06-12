@@ -1,38 +1,45 @@
 <section class="featured-items padding-top padding-bottom" id="featured-items">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="heading-details mb-0">
-                    <h4 class="heading">Our Products</h4>
-                </div>
-            </div>
-            <div class="col-12 col-md-8 offset-md-2 text-center mb-4">
-                <p class="text">Lorem ipsum is simply dummy text of the printing and type setting has been the
-                    industry.</p>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="heading-details mb-0">
+          <h4 class="heading">Our Products</h4>
         </div>
-        <div class="row">
-            <div *ngFor="let item of (Products$|async)" class="col-6 col-md-6 col-lg-3 text-center ">
-                <div class="featured-item-card">
-                    <div class="item-img">
-                        <img src="https://megaone.acrothemes.com/food-shop/img/item8.jpg">
-                    </div>
-                    <div class="item-detail">
-                        <h5 class="item-name">{{item.name}}</h5>
-                    
-                        <p class="item-price">{{item.price|currency}}</p>
-                    </div>
-                    <div class="item-btn">
-                        <button class="btn btn-success" (click)="AddToCart(item)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-          
+      </div>
+      <div class="col-12 text-center">
+        <div *ngFor="let item of Products" class="heading-details mb-0">
+         <div>{{item}}</div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center mt-5">
-                <app-button link="" title="LoadMore"></app-button>
-            </div>
-        </div>
+      </div>
     </div>
+
+
+    <div class="row">
+      <div
+        *ngFor="let item of Products$ | async"
+        class="col-6 col-md-6 col-lg-3 text-center"
+      >
+        <div class="featured-item-card">
+          <div class="item-img">
+            <img src="https://megaone.acrothemes.com/food-shop/img/item8.jpg" />
+          </div>
+          <div class="item-detail">
+            <h5 class="item-name">{{ item.name }}</h5>
+
+            <p class="item-price">{{ item.price | currency }}</p>
+          </div>
+          <div class="item-btn">
+            <button class="btn btn-success" (click)="AddToCart(item)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center mt-5">
+        <app-button (onSave)="saveProduct($event)"  title="LoadMore"></app-button>
+      </div>
+    </div>
+  </div>
 </section>

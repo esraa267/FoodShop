@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -6,11 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class BtnComponent implements OnInit {
-
+  productName:string =''
   @Input() title = ''
-  @Input() link = ''
+  @Output() onSave=new EventEmitter<string>()
   constructor() { }
   ngOnInit(): void {
   }
-
+  save(){
+   this.onSave.emit(this.productName);
+   this.productName=''
+  }
 }

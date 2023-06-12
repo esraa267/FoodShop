@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScrollDirective } from './Directives/scroll.directive';
 import { HttpClientModule } from '@angular/common/http';
-import { MarginScrollDirective } from './Directives/margin-scroll/margin-scroll.directive';
-import { RegisterComponent } from './Components/register/register.component';
+import { ScrollDirective } from './Shared/directives/scroll.directive';
+import { MarginScrollDirective } from './Shared/directives/margin-scroll/margin-scroll.directive';
 
 @NgModule({
   declarations: [

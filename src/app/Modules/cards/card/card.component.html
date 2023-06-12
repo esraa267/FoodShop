@@ -1,0 +1,41 @@
+<section class="featured-items padding-top padding-bottom" id="featured-items">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+        <div class="mb-4">
+          <label for="validationCustom01" class="form-label"
+            >Product name</label
+          >
+          <input
+            [(ngModel)]="productName"
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            required
+          />
+        </div>
+        <app-button
+          (onSave)="saveProduct()"
+          title="Add Product"
+          [disabled]="isProductNameEmpty()"
+        ></app-button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        *ngFor="let item of Products"
+        class="col-6 col-md-6 col-lg-3 text-center"
+      >
+        <div class="featured-item-card">
+          <div class="item-img">
+            <img src="https://megaone.acrothemes.com/food-shop/img/item8.jpg" />
+          </div>
+          <div class="item-detail">
+            <h5 class="item-name">{{ item }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

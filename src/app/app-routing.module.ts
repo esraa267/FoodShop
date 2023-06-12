@@ -5,26 +5,16 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./Components/main/layout.module').then(
+      import('./Modules/layout/layout.module').then(
         (m) => m.LayoutModule
       ),
   },
   {
     path: 'login',
     loadChildren: () =>
-      import('./Components/login/login.module').then((m) => m.LoginModule),
+      import('./Modules/login/login.module').then((m) => m.LoginModule),
   },
-  {
-    path: 'register',
-    loadChildren: () =>
-      import('./Components/register/register.module').then((m) => m.RegisterModule),
-  },
-  
-  // {
-  //   path: 'cart',
-  //   loadChildren: () =>
-  //     import('./Components/cart/cart.module').then((m) => m.CartModule),
-  // },
+
 ];
 
 @NgModule({
